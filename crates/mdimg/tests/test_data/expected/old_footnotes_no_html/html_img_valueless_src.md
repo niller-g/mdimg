@@ -1,0 +1,1 @@
+Text <img src> and <img src=""> here

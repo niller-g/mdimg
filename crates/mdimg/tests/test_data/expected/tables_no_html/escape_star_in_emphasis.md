@@ -1,0 +1,1 @@
+*before Image { span: 8..23, raw: "![x](st*ar.png)", kind: Markdown(MarkdownImage { url: Borrowed("st*ar.png"), title: Borrowed(""), alt: Borrowed("x"), link: Inline }) } after*

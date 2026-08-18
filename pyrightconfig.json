@@ -1,0 +1,13 @@
+{
+  "executionEnvironments": [{ "root": "./crates/mdimg-python" }],
+  "venvPath": "./crates/mdimg-python",
+  "venv": ".venv",
+  "typeCheckingMode": "strict",
+  "pythonVersion": "3.10",
+  "pythonPlatform": "All",
+  "reportUnreachable": "warning",
+  "reportUnusedVariable": "warning",
+  "reportUnusedFunction": "warning",
+  "reportUnnecessaryCast": "warning",
+  "reportUnusedImport": "warning"
+}

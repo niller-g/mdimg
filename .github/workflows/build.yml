@@ -1,0 +1,101 @@
+name: Build
+
+on:
+  workflow_call:
+
+jobs:
+  crate:
+    name: cargo crate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          cache: true
+
+      - name: Package crate
+        run: cargo package --package mdimg
+
+      - name: Upload crate
+        uses: actions/upload-artifact@v7
+        with:
+          name: mdimg-crate
+          path: target/package/*.crate
+
+  wheels:
+    name: ${{ matrix.wheel }} wheel
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            wheel: manylinux_x86_64
+            target: x86_64
+            manylinux: auto
+          - os: ubuntu-latest
+            wheel: manylinux_aarch64
+            target: aarch64
+            manylinux: auto
+          - os: ubuntu-latest
+            wheel: musllinux_x86_64
+            target: x86_64
+            manylinux: musllinux_1_2
+          - os: ubuntu-latest
+            wheel: musllinux_aarch64
+            target: aarch64
+            manylinux: musllinux_1_2
+          - os: windows-latest
+            wheel: win_amd64
+            target: x64
+          - os: macos-latest
+            wheel: macosx_x86_64
+            target: x86_64
+          - os: macos-latest
+            wheel: macosx_arm64
+            target: aarch64
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Build wheel
+        uses: PyO3/maturin-action@v1
+        with:
+          working-directory: crates/mdimg-python
+          command: build
+          args: --release --out dist
+          target: ${{ matrix.target }}
+          manylinux: ${{ matrix.manylinux }}
+          sccache: true
+
+      - name: Upload wheel
+        uses: actions/upload-artifact@v7
+        with:
+          name: mdimg-wheel-${{ matrix.wheel }}
+          path: crates/mdimg-python/dist/*.whl
+
+  sdist:
+    name: python sdist
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Build sdist
+        uses: PyO3/maturin-action@v1
+        with:
+          working-directory: crates/mdimg-python
+          command: sdist
+          args: --out dist
+
+      - name: Upload sdist
+        uses: actions/upload-artifact@v7
+        with:
+          name: mdimg-sdist
+          path: crates/mdimg-python/dist/*.tar.gz

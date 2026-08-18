@@ -1,0 +1,1 @@
+[Image { span: 1..16, raw: "![alt](one.png)", kind: Markdown(MarkdownImage { url: Borrowed("one.png"), title: Borrowed(""), alt: Borrowed("alt"), link: Inline }) }](http://target)

@@ -1,0 +1,1 @@
+Before Image { span: 7..27, raw: "<img src=\"one.png\"/>", kind: Html({"src": "one.png"}) } and Image { span: 32..53, raw: "<img src=\"two.png\" />", kind: Html({"src": "two.png"}) } after

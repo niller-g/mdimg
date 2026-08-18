@@ -1,0 +1,1 @@
+[![alt](one.png)](http://target)

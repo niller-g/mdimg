@@ -1,0 +1,1 @@
+日本語 Image { span: 10..48, raw: "<img src=\"画像.png\" alt=\"テスト\">", kind: Html({"alt": "テスト", "src": "画像.png"}) } 中文 Image { span: 56..81, raw: "<img src=\"café🎉.png\">", kind: Html({"src": "café🎉.png"}) } ελληνικά

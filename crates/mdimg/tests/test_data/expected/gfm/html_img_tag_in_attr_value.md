@@ -1,0 +1,1 @@
+<div title='<img src=inner.png>'>Image { span: 33..52, raw: "<img src=outer.png>", kind: Html({"src": "outer.png"}) }</div>

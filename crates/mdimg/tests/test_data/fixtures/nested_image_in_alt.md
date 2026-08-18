@@ -1,0 +1,1 @@
+![alt ![inner](inner.png)](outer.png)

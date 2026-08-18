@@ -1,0 +1,1 @@
+Slash: Image { span: 7..25, raw: "<img src=one.png/>", kind: Html({"src": "one.png/"}) } then Image { span: 31..50, raw: "<img src=two.png/ >", kind: Html({"src": "two.png/"}) } then Image { span: 56..77, raw: "<img src=three.png />", kind: Html({"src": "three.png"}) }

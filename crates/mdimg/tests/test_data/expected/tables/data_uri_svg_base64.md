@@ -1,0 +1,1 @@
+Image { span: 0..119, raw: "![icon](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4=)", kind: Markdown(MarkdownImage { url: Borrowed("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4="), title: Borrowed(""), alt: Borrowed("icon"), link: Inline }) }

@@ -1,0 +1,2 @@
+- [ ] Image { span: 6..19, raw: "![a](one.png)", kind: Markdown(MarkdownImage { url: Borrowed("one.png"), title: Borrowed(""), alt: Borrowed("a"), link: Inline }) }
+- [x] Image { span: 26..39, raw: "![b](two.png)", kind: Markdown(MarkdownImage { url: Borrowed("two.png"), title: Borrowed(""), alt: Borrowed("b"), link: Inline }) }

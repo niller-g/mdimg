@@ -1,0 +1,1 @@
+Text Image { span: 5..24, raw: "<IMG SRC=\"one.png\">", kind: Html({"src": "one.png"}) } here

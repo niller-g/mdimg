@@ -1,0 +1,1 @@
+<img a"b=c src=one.png> and <img =eq src=two.png> and Image { span: 54..86, raw: "<img src=three.png flag another>", kind: Html({"another": "", "flag": "", "src": "three.png"}) }

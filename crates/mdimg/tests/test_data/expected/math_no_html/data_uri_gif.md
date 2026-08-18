@@ -1,0 +1,1 @@
+Image { span: 0..90, raw: "![spinner](data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)", kind: Markdown(MarkdownImage { url: Borrowed("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"), title: Borrowed(""), alt: Borrowed("spinner"), link: Inline }) }

@@ -1,0 +1,1 @@
+![日本語 🎉 ünïcode](a.png) and 🎉 after

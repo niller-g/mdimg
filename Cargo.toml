@@ -1,0 +1,43 @@
+[workspace]
+members = ["crates/*"]
+default-members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/niller-g/mdimg"
+readme = "README.md"
+
+[workspace.dependencies]
+html5gum = { version = "0.8.4", default-features = false }
+pulldown-cmark = { version = "0.13.4", default-features = false }
+criterion = "0.8.2"
+
+[workspace.lints.rust]
+elided_lifetimes_in_paths = "warn"
+explicit_outlives_requirements = "warn"
+unsafe_op_in_unsafe_fn = "warn"
+unused_extern_crates = "warn"
+unused_lifetimes = "warn"
+unreachable_pub = "warn"
+unused_qualifications = "warn"
+unit-bindings = "warn"
+trivial-numeric-casts = "warn"
+trivial-casts = "warn"
+redundant-imports = "warn"
+non_ascii_idents = "warn"
+impl-trait-redundant-captures = "warn"
+ambiguous-negative-literals = "warn"
+
+[workspace.lints.clippy]
+dbg_macro = "warn"
+todo = "warn"
+print_stdout = "warn"
+print_stderr = "warn"
+rc_buffer = "warn"
+
+result_unit_err = "allow" # () makes a fine error in most cases
+len_without_is_empty = "allow" # We don't expose public APIs that matter like this

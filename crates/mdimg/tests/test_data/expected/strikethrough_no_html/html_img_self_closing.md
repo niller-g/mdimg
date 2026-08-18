@@ -1,0 +1,1 @@
+Before <img src="one.png"/> and <img src="two.png" /> after

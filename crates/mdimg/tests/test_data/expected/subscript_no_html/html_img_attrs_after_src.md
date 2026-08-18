@@ -1,0 +1,1 @@
+Text <img class="x" data-a="1" src="one.png" width=100> here

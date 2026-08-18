@@ -1,0 +1,1 @@
+![*emph* and **strong**](a.png)

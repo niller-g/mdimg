@@ -1,0 +1,1 @@
+before ![alt](http://x/a.png) after

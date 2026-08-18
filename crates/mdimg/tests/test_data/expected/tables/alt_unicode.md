@@ -1,0 +1,1 @@
+Image { span: 0..34, raw: "![日本語 🎉 ünïcode](a.png)", kind: Markdown(MarkdownImage { url: Borrowed("a.png"), title: Borrowed(""), alt: Borrowed("日本語 🎉 ünïcode"), link: Inline }) } and 🎉 after

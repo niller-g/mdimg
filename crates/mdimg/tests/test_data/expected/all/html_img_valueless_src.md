@@ -1,0 +1,1 @@
+Text Image { span: 5..14, raw: "<img src>", kind: Html({"src": ""}) } and Image { span: 19..31, raw: "<img src=\"\">", kind: Html({"src": ""}) } here

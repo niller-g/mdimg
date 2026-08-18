@@ -1,0 +1,1 @@
+Text <img alt="no source"> and <img> here

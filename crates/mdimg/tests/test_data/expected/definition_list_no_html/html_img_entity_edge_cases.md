@@ -1,0 +1,1 @@
+<img src="a&#0;b.png"> and <img src="c&#x110000;d.png"> and <img src="e&#xD800;f.png"> and <img src="g&#38;h.png"> and <img src="i&unknownentity;j.png">

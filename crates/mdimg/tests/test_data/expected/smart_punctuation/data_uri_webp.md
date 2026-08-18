@@ -1,0 +1,1 @@
+Image { span: 0..90, raw: "![banner](data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA)", kind: Markdown(MarkdownImage { url: Borrowed("data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA"), title: Borrowed(""), alt: Borrowed("banner"), link: Inline }) }

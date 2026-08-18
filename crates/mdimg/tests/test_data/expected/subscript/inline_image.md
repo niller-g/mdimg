@@ -1,0 +1,1 @@
+before Image { span: 7..29, raw: "![alt](http://x/a.png)", kind: Markdown(MarkdownImage { url: Borrowed("http://x/a.png"), title: Borrowed(""), alt: Borrowed("alt"), link: Inline }) } after

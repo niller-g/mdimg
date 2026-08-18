@@ -1,0 +1,1 @@
+Image { span: 0..17, raw: "<img src=\"a.png\">", kind: Html({"src": "a.png"}) }Image { span: 17..34, raw: "<img src=\"b.png\">", kind: Html({"src": "b.png"}) }Image { span: 34..51, raw: "<img src=\"c.png\">", kind: Html({"src": "c.png"}) }

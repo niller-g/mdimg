@@ -1,0 +1,1 @@
+Text <![CDATA[x > y <img src=a.png>]]> end

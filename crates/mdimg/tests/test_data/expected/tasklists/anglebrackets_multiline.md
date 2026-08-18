@@ -1,0 +1,1 @@
+> Abe Image { span: 6..23, raw: "![a\n> b](one.png)", kind: Markdown(MarkdownImage { url: Borrowed("one.png"), title: Borrowed(""), alt: Boxed("a b"), link: Inline }) }fisk

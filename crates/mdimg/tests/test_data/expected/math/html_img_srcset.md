@@ -1,0 +1,1 @@
+Image { span: 0..140, raw: "<img src=\"a.png\" srcset=\"a-1x.png 1x, a-2x.png 2x\" sizes=\"(max-width: 600px) 480px, 800px\" alt=\"responsive\" loading=\"lazy\" decoding=\"async\">", kind: Html({"alt": "responsive", "decoding": "async", "loading": "lazy", "sizes": "(max-width: 600px) 480px, 800px", "src": "a.png", "srcset": "a-1x.png 1x, a-2x.png 2x"}) }

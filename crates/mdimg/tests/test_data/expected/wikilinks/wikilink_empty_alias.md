@@ -1,0 +1,1 @@
+Image { span: 0..7, raw: "![[t|]]", kind: Markdown(MarkdownImage { url: Borrowed("t"), title: Borrowed(""), alt: Boxed("]]"), link: Wiki { has_pothole: true } }) } Image { span: 8..19, raw: "![x](y.png)", kind: Markdown(MarkdownImage { url: Borrowed("y.png"), title: Borrowed(""), alt: Borrowed("x"), link: Inline }) }

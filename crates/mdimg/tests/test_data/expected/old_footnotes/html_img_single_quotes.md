@@ -1,0 +1,1 @@
+Image { span: 0..27, raw: "<img src='one.png' alt='a'>", kind: Html({"alt": "a", "src": "one.png"}) }

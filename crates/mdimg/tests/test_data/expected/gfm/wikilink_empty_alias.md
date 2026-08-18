@@ -1,0 +1,1 @@
+![[t|]] Image { span: 8..19, raw: "![x](y.png)", kind: Markdown(MarkdownImage { url: Borrowed("y.png"), title: Borrowed(""), alt: Borrowed("x"), link: Inline }) }

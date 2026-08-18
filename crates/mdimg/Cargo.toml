@@ -1,0 +1,26 @@
+[package]
+name = "mdimg"
+version.workspace = true
+edition.workspace = true
+publish = true
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+description = "Surgically substituting image syntax in Markdown"
+keywords = ["markdown", "image", "html", "map", "parser"]
+categories = ["text-processing", "parsing"]
+exclude = ["benches", "fuzz", "tests"]
+
+[dependencies]
+html5gum.workspace = true
+pulldown-cmark.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+
+[lints]
+workspace = true
+
+[[bench]]
+name = "map_images"
+harness = false

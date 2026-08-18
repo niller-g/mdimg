@@ -1,0 +1,1 @@
+\![alt](a.png) and !\[alt](a.png)

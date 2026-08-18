@@ -1,0 +1,1 @@
+[before Image { span: 8..29, raw: "![x](a.png \"t[i]tle\")", kind: Markdown(MarkdownImage { url: Borrowed("a.png"), title: Boxed("t[i]tle"), alt: Borrowed("x"), link: Inline }) } after](dest.html)

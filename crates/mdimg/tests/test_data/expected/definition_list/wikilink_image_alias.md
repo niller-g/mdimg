@@ -1,0 +1,1 @@
+![[dog.png|a cute dog]] and ![[nested/path/cat.jpg]]

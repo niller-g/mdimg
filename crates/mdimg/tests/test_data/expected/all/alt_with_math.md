@@ -1,0 +1,1 @@
+Image { span: 0..29, raw: "![sum $a+b$ and $$c$$](a.png)", kind: Markdown(MarkdownImage { url: Borrowed("a.png"), title: Borrowed(""), alt: Boxed("sum a+b and c"), link: Inline }) }

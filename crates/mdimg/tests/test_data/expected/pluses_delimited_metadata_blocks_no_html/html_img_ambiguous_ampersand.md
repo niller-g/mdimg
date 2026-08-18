@@ -1,0 +1,1 @@
+<img src="x?a=&not;b"> and <img src="x?a=&notx"> and <img src="x?a=&COPY"> and <img src=y&amp> and <img src=z&not>

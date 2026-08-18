@@ -1,0 +1,1 @@
+Text <![CDATA[x > y Image { span: 20..35, raw: "<img src=a.png>", kind: Html({"src": "a.png"}) }]]> end

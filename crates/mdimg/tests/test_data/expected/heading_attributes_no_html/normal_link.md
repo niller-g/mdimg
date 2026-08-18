@@ -1,0 +1,1 @@
+A [normal link](http://example.com) in a sentence.

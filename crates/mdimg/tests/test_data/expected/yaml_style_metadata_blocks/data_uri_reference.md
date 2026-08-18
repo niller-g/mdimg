@@ -1,0 +1,4 @@
+Image { span: 0..15, raw: "![spinner][gif]", kind: Markdown(MarkdownImage { url: Borrowed("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"), title: Borrowed(""), alt: Borrowed("spinner"), link: Reference { id: Borrowed("gif") } }) } and Image { span: 20..32, raw: "![icon][svg]", kind: Markdown(MarkdownImage { url: Borrowed("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4="), title: Borrowed(""), alt: Borrowed("icon"), link: Reference { id: Borrowed("svg") } }) }
+
+[gif]: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+[svg]: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz4=

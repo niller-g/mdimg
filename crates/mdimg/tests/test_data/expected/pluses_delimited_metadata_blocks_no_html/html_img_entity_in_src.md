@@ -1,0 +1,1 @@
+Text <img src="a.png?x=1&amp;y=2"> here

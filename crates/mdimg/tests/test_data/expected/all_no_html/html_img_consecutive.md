@@ -1,0 +1,1 @@
+<img src="a.png"><img src="b.png"><img src="c.png">

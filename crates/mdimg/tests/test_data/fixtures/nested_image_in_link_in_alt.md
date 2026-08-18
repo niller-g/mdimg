@@ -1,0 +1,1 @@
+![outer [link ![inner](inner.png)](http://x)](outer.png)

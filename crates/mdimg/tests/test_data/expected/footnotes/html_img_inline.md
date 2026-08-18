@@ -1,0 +1,1 @@
+Text with Image { span: 10..29, raw: "<img src=\"one.png\">", kind: Html({"src": "one.png"}) } inline.

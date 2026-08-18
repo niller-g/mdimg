@@ -1,0 +1,1 @@
+Text Image { span: 5..90, raw: "<img src=\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>\" alt=\"d\">", kind: Html({"alt": "d", "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>"}) } here

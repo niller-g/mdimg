@@ -1,0 +1,46 @@
+name: Fuzz
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  fuzz:
+    name: replace_images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: nightly
+          cache: true
+
+      - name: Install cargo-fuzz
+        run: cargo install cargo-fuzz
+
+      - name: Build fuzzer
+        run: |
+          cd crates/mdimg
+          cargo fuzz build
+
+      - name: Run fuzzer
+        id: run_fuzzer
+        run: |
+          cd crates/mdimg
+          cargo fuzz run replace_images -- -max_total_time=60 -max_len=256
+        continue-on-error: true
+
+      - name: Publish crash reports
+        uses: actions/upload-artifact@v7
+        if: steps.run_fuzzer.outcome != 'success'
+        with:
+          name: fuzz-crash-reports
+          path: crates/mdimg/fuzz/artifacts
+
+      - name: Fail if fuzzer failed
+        if: steps.run_fuzzer.outcome != 'success'
+        run: exit 1

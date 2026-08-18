@@ -1,0 +1,66 @@
+[build-system]
+requires = ["maturin>=1.14,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "mdimg"
+description = "Map and rewrite images in Markdown text, including inline HTML img tags"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT OR Apache-2.0"
+license-files = ["LICENSE-MIT", "LICENSE-APACHE"]
+keywords = ["markdown", "image", "html", "map", "parser"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Typing :: Typed",
+]
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/niller-g/mdimg"
+
+[tool.maturin]
+python-source = "python"
+module-name = "mdimg._mdimg"
+features = ["pyo3/extension-module"]
+exclude = ["**/__pycache__/**", "tests/**"]
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "pyright==1.1.411",
+    "ruff==0.16.3"
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = true
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = [
+    "E",      # errors
+    "W",      # warnings
+    "F",      # pyflakes
+    "N",      # pep8-naming
+    "A",      # flake8-builtins
+    "B",      # flake8-bugbear
+    "Q",      # flake8-quotes
+    "C4",     # flake8-comprehensions
+    "TC",     # flake8-type-checking
+    "UP",     # pyupgrade
+    "ARG",    # ruff-arg
+    "FAST",   # fastapi
+    "I",      # isort
+    "PLE",    # Error
+    "TID251", # flake8-tidy-imports
+]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false

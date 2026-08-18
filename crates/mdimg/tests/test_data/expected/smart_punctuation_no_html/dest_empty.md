@@ -1,0 +1,1 @@
+Image { span: 0..8, raw: "![alt]()", kind: Markdown(MarkdownImage { url: Borrowed(""), title: Borrowed(""), alt: Borrowed("alt"), link: Inline }) } and Image { span: 13..23, raw: "![alt](<>)", kind: Markdown(MarkdownImage { url: Borrowed(""), title: Borrowed(""), alt: Borrowed("alt"), link: Inline }) }

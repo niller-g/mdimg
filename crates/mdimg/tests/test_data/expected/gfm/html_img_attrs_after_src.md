@@ -1,0 +1,1 @@
+Text Image { span: 5..55, raw: "<img class=\"x\" data-a=\"1\" src=\"one.png\" width=100>", kind: Html({"class": "x", "data-a": "1", "src": "one.png", "width": "100"}) } here

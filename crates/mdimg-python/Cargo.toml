@@ -1,0 +1,20 @@
+[package]
+name = "mdimg-python"
+version.workspace = true
+edition.workspace = true
+publish = false
+license.workspace = true
+repository.workspace = true
+readme = "README.md"
+description = "Python bindings for mdimg"
+
+[lib]
+name = "_mdimg"
+crate-type = ["cdylib"]
+
+[dependencies]
+mdimg = { path = "../mdimg" }
+pyo3 = { version = "0.29.2", features = ["abi3-py310", "extension-module"] }
+
+[lints]
+workspace = true

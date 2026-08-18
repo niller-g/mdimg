@@ -1,0 +1,1 @@
+Text <img src="never closed

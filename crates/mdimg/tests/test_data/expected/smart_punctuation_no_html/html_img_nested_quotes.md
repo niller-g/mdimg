@@ -1,0 +1,1 @@
+<img src='a"b.png'> and <img src="c'd.png"> and <img alt="it's fine" src="e.png">

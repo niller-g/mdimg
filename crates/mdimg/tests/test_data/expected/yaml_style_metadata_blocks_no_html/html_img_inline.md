@@ -1,0 +1,1 @@
+Text with <img src="one.png"> inline.
