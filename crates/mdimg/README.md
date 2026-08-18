@@ -13,3 +13,19 @@ let output = mdimg::map_images("Before ![alt](file.png) after", |image| {
 });
 assert_eq!(output, "Before [image: alt=alt url=file.png] after");
 ```
+
+Return `image.raw` to leave an image unchanged. Configure markdown parsing with the `map_images_with` function, e.g. to enable GitHub Flavored Markdown:
+
+```rust
+use mdimg::{map_images_with, Options};
+
+map_images_with(text, 
+    Options {
+        markdown: mdimg::pulldown_cmark::Options::ENABLE_GFM,
+        ..Options::default()
+    },
+    |image| {
+        todo!("Your image mapping logic here")
+    }
+);
+```

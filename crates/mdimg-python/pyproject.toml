@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "mdimg"
-description = "Map and rewrite images in Markdown text, including inline HTML img tags"
+description = "Surgical substitution of image syntax in Markdown"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT OR Apache-2.0"
@@ -28,11 +28,7 @@ features = ["pyo3/extension-module"]
 exclude = ["**/__pycache__/**", "tests/**"]
 
 [dependency-groups]
-dev = [
-    "pytest==9.1.1",
-    "pyright==1.1.411",
-    "ruff==0.16.3"
-]
+dev = ["pytest==9.1.1", "pyright==1.1.411", "ruff==0.16.3"]
 
 [tool.ruff]
 line-length = 100
