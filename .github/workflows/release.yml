@@ -60,7 +60,7 @@ jobs:
 
   release:
     name: Publish GitHub release
-    needs: [publish-crate, publish-pypi]
+    needs: [build, publish-crate, publish-pypi]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -76,11 +76,10 @@ jobs:
         env:
           GH_REPO: ${{ github.repository }}
           GH_TOKEN: ${{ github.token }}
+          TAG: v${{ needs.build.outputs.version }}
         run: |
-          crate=$(basename artifacts/mdimg-*.crate .crate)
-          tag="v${crate#mdimg-}"
-          gh release create "$tag" \
+          gh release create "$TAG" \
             --target "$GITHUB_SHA" \
-            --title "$tag" \
+            --title "$TAG" \
             --generate-notes \
             artifacts/*

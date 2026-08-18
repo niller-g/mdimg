@@ -2,11 +2,16 @@ name: Build
 
 on:
   workflow_call:
+    outputs:
+      version:
+        value: ${{ jobs.crate.outputs.version }}
 
 jobs:
   crate:
     name: cargo crate
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.package.outputs.version }}
 
     steps:
       - name: Checkout repository
@@ -18,7 +23,12 @@ jobs:
           cache: true
 
       - name: Package crate
-        run: cargo package --package mdimg
+        id: package
+        run: |
+          cargo package --package mdimg
+          version=$(cargo metadata --format-version 1 --no-deps \
+            | jq -er '.packages[] | select(.name == "mdimg") | .version')
+          echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Upload crate
         uses: actions/upload-artifact@v7
