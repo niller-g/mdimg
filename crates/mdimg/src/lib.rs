@@ -246,8 +246,9 @@ where
                 last = range.end;
                 let mut lines = Vec::new();
                 let mut pos = range.start;
-                for (source_line, content_line) in
-                    text[range.clone()].split_inclusive('\n').zip(content.split_inclusive('\n'))
+                for (source_line, content_line) in text[range.clone()]
+                    .split_inclusive(['\n', '\r'])
+                    .zip(content.split_inclusive(['\n', '\r']))
                 {
                     let prefix = source_line.len() - content_line.len();
                     lines.push(pos + prefix..pos + source_line.len());
@@ -371,16 +372,22 @@ mod tests {
 
     fn check_urls(text: &str, expected: &[Option<&str>]) {
         let mut index = 0;
-        map_images_with(
+        let output = map_images_with(
             text,
             Options { markdown: pulldown_cmark::Options::all(), html: true },
             |image| {
                 assert_eq!(image.url(), expected[index], "image {index} of {text:?}");
+                assert_eq!(
+                    image.raw,
+                    &text[image.span.clone()],
+                    "span of image {index} of {text:?}"
+                );
                 index += 1;
                 image.raw
             },
         );
         assert_eq!(index, expected.len(), "image count of {text:?}");
+        assert_eq!(output, text, "identity of {text:?}");
     }
 
     #[test]
@@ -447,6 +454,14 @@ mod tests {
             "<div>\n<img src=\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>\">\n</div>",
             &[Some("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>")],
         );
+    }
+
+    #[test]
+    fn html_images_span_cr_line_endings() {
+        check_urls("> foo <img\n> alt=x\r> src=a.png> bar\n", &[Some("a.png")]);
+        check_urls("> a <img\r> src=b.png> z\r", &[Some("b.png")]);
+        check_urls("> foo <img\r\n> src=a.png> bar\r\n", &[Some("a.png")]);
+        check_urls("> foo <img\n> alt=\"😀x\r> x\r> x\r> x\" src=a.png> bar\n", &[Some("a.png")]);
     }
 
     #[test]
