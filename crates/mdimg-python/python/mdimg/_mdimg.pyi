@@ -63,18 +63,20 @@ class MarkdownImage:
 
     @property
     def url(self) -> str:
-        """The destination of the image, exactly as written in the document."""
+        """The destination URL (references are followed)."""
 
     @property
     def title(self) -> str:
-        """The title of the image, or an empty string if it has none."""
+        """The title of the image. This is the optional text in quotes after the URL, e.g.
+        `![alt](url "title")`. References are followed, so it will be the title on the destination
+        URL."""
 
     @property
     def alt(self) -> str:
         """The alternative text of the image, with any inline markup flattened to text."""
 
     @property
-    def link(self) -> Link:
+    def link(self) -> Link.Inline | Link.Reference | Link.Collapsed | Link.Shortcut | Link.Wiki:
         """The kind of link the image was written as."""
 
 @final
@@ -108,7 +110,10 @@ class Image:
 
     @property
     def url(self) -> str | None:
-        """The URL of the image, exactly as written, or `None` if it has none."""
+        """Returns the URL of the image.
+
+        For markdown this is the destination URL (references are followed).
+        For HTML this is the value of the `src` attribute (if it exists)."""
 
     @property
     def alt(self) -> str | None:

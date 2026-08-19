@@ -46,6 +46,9 @@ impl<'a> Image<'a> {
     }
 
     /// Returns the URL of the image.
+    ///
+    /// For markdown this is the destination URL (references are followed).
+    /// For HTML this is the value of the `src` attribute (if it exists).
     pub fn url(&self) -> Option<&str> {
         match &self.kind {
             Kind::Markdown(image) => Some(&image.url),
@@ -87,7 +90,10 @@ impl<'a> Kind<'a> {
 /// A markdown image.
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub struct MarkdownImage<'a> {
+    /// The destination URL (references are followed).
     pub url: CowStr<'a>,
+    /// The title of the image. This is the optional text in quotes after the URL, e.g. `![alt](url "title")`.
+    /// References are followed, so it will be the title on the destination URL.
     pub title: CowStr<'a>,
     pub alt: CowStr<'a>,
     pub link: Link<'a>,
